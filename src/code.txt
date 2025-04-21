@@ -1,0 +1,59 @@
+class Window():
+    def __init__(self, dim=(500,500), title="MM350 (AlterEGO)", fov= 45):
+        self.window = pygame.display.set_mode(dim, DOUBLEBUF | OPENGL | RESIZABLE)
+        pygame.display.set_caption(title)
+        self.width = dim[0]
+        self.height = dim[1]
+        self.fov = fov
+        gluPerspective(self.fov, (dim[0]/dim[1]), 0.1, 100000)
+        glTranslatef(0,0, -15)
+
+
+
+        self.AlterEgo = MM350()
+
+
+
+
+    def drawText(position, textString):     
+        font = pygame.font.Font (None, 64)
+        textSurface = font.render(textString, True, (255,255,255,255), (0,0,0,0))     
+        textData = pygame.image.tostring(textSurface, "RGBA", True)     
+        glRasterPos3d(*position)     
+        glDrawPixels(textSurface.get_width(), textSurface.get_height(), GL_RGBA, GL_UNSIGNED_BYTE, textData)
+
+
+	
+
+    def set_lights(self):
+        light_ambient  = [0.5, 0.5, 0.5, 1.0]                                                       
+        light_diffuse  = [0.9, 0.9, 0.9, 1.0]                                                       
+        light_specular = [ 1.0, 1.0, 1.0, 1.0]
+        light_position = [ 100.0, 100.0, -100.0, 1.0]
+
+        mat_ambient    = [0.5, 0.5, 0.5, 1.0]
+        mat_diffuse    = [0.8, 0.8, 0.8, 1.0]
+        mat_specular   = [1.0, 1.0, 1.0, 1.0]
+        high_shininess = [100.0]
+
+        glEnable(GL_LIGHT0)
+        glEnable(GL_NORMALIZE)
+        glEnable(GL_COLOR_MATERIAL)
+        glEnable(GL_LIGHTING)
+        glEnable(GL_LIGHT0)
+        glShadeModel(GL_SMOOTH)
+
+        glLightfv(GL_LIGHT0, GL_AMBIENT,  light_ambient)
+        glLightfv(GL_LIGHT0, GL_DIFFUSE,  light_diffuse)
+        glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular)
+        glLightfv(GL_LIGHT0, GL_POSITION, light_position)
+
+        glMaterialfv(GL_FRONT, GL_AMBIENT,   mat_ambient)
+        glMaterialfv(GL_FRONT, GL_DIFFUSE,   mat_diffuse)
+        glMaterialfv(GL_FRONT, GL_SPECULAR,  mat_specular)
+        glMaterialfv(GL_FRONT, GL_SHININESS, high_shininess)
+
+        glEnable(GL_DEPTH_TEST)
+        glEnable(GL_CULL_FACE)
+
+        glClearColor(0.2, 0.5, 0, 1)

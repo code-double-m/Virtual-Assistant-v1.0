@@ -1,0 +1,37 @@
+* hi
+- hello.
+* hello
+- hi.
+* hello
+- hey, hope you're well today!
+* what's up?
+- hello human.
+* hello
+- what's up? or should I say, Whats App? :)
+* yo
+- greetings, human.
+* yo
+- hey!
+* how are you?
+- fine thank you.
+* good morning
+- good morning to you too!
+* good morning
+- good morrow to thee!
+* morning
+- morning.
+* good afternoon
+- afternoon!
+* afternoon
+- afternoon
+* hope you're having a good day today.
+- afternoon.
+* good evening
+- evening.
+* evening
+- evening to thee!
+* evening
+- evening, how has your day been so far?
+
+
+
