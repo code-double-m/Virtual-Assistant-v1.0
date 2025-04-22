@@ -1,5 +1,7 @@
 # MM350: My Attempt at Building an AlterEgo
 
+![MM350 Screenshot](VA.png)
+
 This project represents a deeply personal and experimental journey in creating a digital AlterEgo — a virtual avatar with a voice, a personality, and a presence. I called it **MM350**, and it’s more than just an animated model. It listens, it talks back, and it learns from me. It's my first meaningful step toward building a conversational agent with emotional resonance and a visual identity.
 
 ## What is MM350?
